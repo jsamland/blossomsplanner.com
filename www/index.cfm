@@ -1,3 +1,7 @@
+<cfif structKeyExists(session.user,"userID")>
+	<cflocation url="myprojects.cfm" addtoken="false" />
+</cfif>
+
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -20,24 +24,31 @@
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
+		
+		
 
         <!-- Add your site or application content here -->
         <p>Pretty flowers!</p>
+		<form method="post" action="login.cfm">
         <p>Login:<br><input type="text" name="username"/>
         	<br>
         	Password:<br>
         	<input type="password" name="password"/>
         	<br>
         	<br>
-<input type="submit" name="submit"/>
-        	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        	<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-        	<script src="js/plugins.js"></script>
-        	<script src="js/main.js"></script>
-        </p>        	
-       	<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-	<p>&nbsp; </p>
-	<p>Register</p>
+			<input type="submit" name="submit"/>
+        </p>
+		</form>
+		<p>&nbsp; </p>
+		<p><a href="register.cfm">Register</a></p>
+		
+		
+		
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+	<script src="js/plugins.js"></script>
+	<script src="js/main.js"></script>
+   	<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 	<script>
             var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
             (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];

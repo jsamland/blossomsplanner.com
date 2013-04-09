@@ -9,7 +9,7 @@ component {
 	this.clientmanagement = true;
 	this.datasource = "blossomsplanner";
 	this.googleMapKey = "GOOGLE_MAPS_API_KEY";
-	this.loginstorage = "cookie";
+	this.loginstorage = "session";
 	this.serverSideFormValidation = "yes";
 	this.setclientcookies = "yes";
 	this.setdomaincookies = "yes";
@@ -83,7 +83,7 @@ component {
 	 * @hint A session starts
 	 */
 	public void function onSessionStart(){
-
+		session.user={};
 	}
 
 	/**

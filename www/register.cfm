@@ -1,5 +1,7 @@
-<cf_basic >
+<form method="post" action="register_complete.cfm">
 
-	Registration!
+Name: <br/>
+Email: <br/>
+<input type="submit"/>
 
-</cf_basic>
+</form>
