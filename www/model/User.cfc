@@ -16,6 +16,7 @@
 	property name="resetCode" column="resetCode" type="string" length="50";
 	
 	// relationships
+	property name="shops" fieldtype="many-to-many" CFC="Shop" linktable="ShopUsers" FKColumn="userID" inversejoincolumn="shopID" lazy="true" cascade="all" orderby="shopName";
 	
 	//new functions
 	

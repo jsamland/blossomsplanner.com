@@ -1,5 +1,5 @@
 <cfif structKeyExists(session.user,"userID")>
-	<cflocation url="myprojects.cfm" addtoken="false" />
+	<cflocation url="myProjects.cfm" addtoken="false" />
 </cfif>
 
 <!DOCTYPE html>
