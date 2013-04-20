@@ -28,7 +28,9 @@
 		
 
         <!-- Add your site or application content here -->
-        <p><img src="img/flower logo.jpg" width="368" height="250"></p>
+        <div style="height:50px"></div>
+	<div style="background-color:lightpink; border:solid lime;border-radius:10px; width:250px; text-align:center; margin-top:50px; margin:auto">
+	<p><img src="img/flower logo.jpg" width="368" height="250"></p>
 		<form method="post" action="login.cfm">
         <p>Login:<br><input type="text" name="username"/>
         	<br>
@@ -41,7 +43,8 @@
 		</form>
 		<p>&nbsp; </p>
 		<p><a href="register.cfm">Register</a></p>
-		
+	</div>
+	<div style="height:50px"></div>	
 		
 		
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
