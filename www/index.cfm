@@ -28,7 +28,7 @@
 		
 
         <!-- Add your site or application content here -->
-        <p>Pretty flowers!</p>
+        <p><img src="img/flower logo.jpg" width="368" height="250"></p>
 		<form method="post" action="login.cfm">
         <p>Login:<br><input type="text" name="username"/>
         	<br>
