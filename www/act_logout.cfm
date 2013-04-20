@@ -1,0 +1,3 @@
+﻿<!---<cflogout />--->
+
+<cfset session.user={} />

@@ -12,7 +12,7 @@
 	property name="dateModified" type="date" ormtype="timestamp";
 	
 	// relationships
-	property name="users" fieldtype="many-to-many" CFC="User" linktable="ShopUsers" FKColumn="shopID" inversejoincolumn="userID" lazy="true" cascade="all" orderby="userName";
+	property name="users" fieldtype="many-to-many" CFC="User" linktable="ShopUsers" FKColumn="shopID" inversejoincolumn="userID" lazy="true" cascade="all";
 	property name="orders" singularname="order" fieldtype="one-to-many" CFC="Order" FKColumn="shopID" lazy="true" ;
 
 	//new functions

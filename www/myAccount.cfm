@@ -1,4 +1,5 @@
-﻿<cfset me=entityLoadByPK("User",session.user.userid) />
+﻿
+<cfset me=entityLoadByPK("User",session.user.userid) />
 
 <cfif StructKeyExists(form,'submit')>
 	<cftransaction action="begin">
@@ -25,4 +26,3 @@ Password Confirm: <input type="password" name="password2"/><br/><br/>
 
 </form>
 </cfoutput>
-

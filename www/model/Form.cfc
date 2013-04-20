@@ -14,6 +14,7 @@
 	
 	// relationships
 	property name="orders" singularname="order" fieldtype="one-to-many" CFC="Order" FKColumn="FormID" lazy="true" ;
+	
 	property name="shop" fieldtype="many-to-one" CFC="Shop" FKColumn="shopID" lazy="true" notnull="false" ;
 
 

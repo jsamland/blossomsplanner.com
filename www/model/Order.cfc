@@ -6,6 +6,7 @@
 	property name="orderID" fieldtype="id" generator="identity" insert="false" update="false";
 
 	// properties
+	property name="OrderName" type="string" length="100";
 	property name="OrderData" type="string" length="8000";
 	
 	property name="dateCreated" type="date" ormtype="timestamp";

@@ -69,6 +69,8 @@ component {
 	public boolean function onRequestStart(String targetPage){
 		if( structKeyExists(url,"reinit") )
 			onApplicationStart();
+			
+		request.URLStruct = parseSES();
 		return true;
 	}
 
@@ -121,4 +123,29 @@ component {
 	public void function onCFCRequest(String cfcname,String method,Struct args){
 
 	}
+	
+	public struct function parseSES() {
+		var LOCAL=StructNew();
+		LOCAL.pathInfo = reReplaceNoCase(trim(cgi.path_info), '.+\.cfm/? *', '');
+		LOCAL.i = 1;
+		LOCAL.lastKey = "";
+		LOCAL.value = "";
+		LOCAL.url = StructNew();
+		LOCAL.urlArray = ArrayNew(1);
+   
+		if(not len(LOCAL.pathInfo)) return LOCAL;
+		
+		for(LOCAL.i=1; LOCAL.i lte listLen(LOCAL.pathInfo, "/"); LOCAL.i=LOCAL.i+1) {
+			LOCAL.value = listGetAt(LOCAL.pathInfo, LOCAL.i, "/");
+			ArrayAppend(LOCAL.urlArray, LOCAL.value);
+			
+			if(LOCAL.i mod 2 is 0) LOCAL.url[LOCAL.lastKey] = LOCAL.value;
+			else LOCAL.lastKey = LOCAL.value;
+		}
+		//did we end with a "dangler?"
+		if((LOCAL.i-1) mod 2 is 1) LOCAL.url[LOCAL.lastKey] = "";
+		
+		return LOCAL;
+	}
+
 }

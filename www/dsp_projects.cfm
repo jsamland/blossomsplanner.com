@@ -1,12 +1,16 @@
 ﻿<cfset me=entityLoadByPK("User",getAuthUser()) />
-<cfoutput>Welcome, #me.getFName()#</cfoutput>
+<cfoutput>
+
+Welcome, #me.getFName()#
 <br/><br/>
 search:<br/>
-<a href="myAccount.cfm">My account</a><br/>
-<a href="logout.cfm">Logout</a><br/>
 <br/>
-<a href="weddingForm.cfm">Doomed Wedding 1</a><br/>
-<a href="weddingForm.cfm">Happy Wedding 23</a><br/>
+
+
+<cfloop array="#request.orderList#" index="order">
+	<a href="/index.cfm/order/#order.getOrderID()#">#order.getOrderName()#</a><br/>
+</cfloop>
+
 <br/>
 
 <cfquery dbtype="hql" name="getForms">
@@ -15,3 +19,5 @@ where <!---ShopID=<cfqueryparam value="#session.user.ShopID#" cfsqltype="cf_sql_
 	or---> ShopID is null
 </cfquery>
 <cfdump var="#getForms#"/>
+
+</cfoutput>
